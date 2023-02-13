@@ -77,11 +77,12 @@
 
     // Use a for loop to define other stars.
     for(var i = 0; i < colors.length; i++){
+      // angle = i * (Math.PI / 3);
       temp = starGeometry(size);
       material = new THREE.MeshBasicMaterial({color: colors[i], side: THREE.DoubleSide});
       var mesh = new THREE.Mesh(temp, material);
-      // x = radius * cos(radian)
-      // y = radius * sin(radian) 
+      // x = radius * cos(radian) -> 1.5 * size * Math.sin(angle);
+      // y = radius * sin(radian) -> 1.5 * size * Math.sin(angle);
       mesh.position.set(10 + i * 10, 0, 1 + i); // Layered positioning so that I know my code works.
       scene.add(mesh);
     }
